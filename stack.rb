@@ -21,6 +21,16 @@ class Stack
 		@head.print
 	end
 
+	def reverse_list
+		stack = Stack.new
+		current_node = @head
+		while (current_node)
+			stack.push(current_node.value)
+			current_node = current_node.next
+		end	
+		stack
+	end
+
 	def reverse_list!
 		current_node = @head
 		prev_node = nil
@@ -31,7 +41,8 @@ class Stack
 			prev_node = current_node
 			current_node = next_node 
 		end	
-		@head = prev_node	
+		@head = prev_node
+		@head
 	end
 
 	def infinite?
